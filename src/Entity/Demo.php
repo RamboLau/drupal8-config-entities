@@ -2,23 +2,22 @@
 
 /**
  * @file
- * Contains \Drupal\demo\Entity\DemoEntity.
+ * Contains \Drupal\demo\Entity\Demo.
  */
 
 namespace Drupal\demo\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
-use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\demo\DemoInterface;
 
 /**
- * Defines a demo configuration entity class.
+ * Defines the Demo entity.
  *
  * @ConfigEntityType(
  *   id = "demo",
  *   label = @Translation("Demo"),
  *   fieldable = FALSE,
- *   controllers = {
+ *   handlers = {
  *     "list_builder" = "Drupal\demo\DemoListBuilder",
  *     "form" = {
  *       "add" = "Drupal\demo\Form\DemoForm",
@@ -33,12 +32,12 @@ use Drupal\demo\DemoInterface;
  *     "label" = "name"
  *   },
  *   links = {
- *     "edit-form" = "demo.edit",
- *     "delete-form" = "demo.delete"
+ *     "edit-form" = "/admin/structure/demos/{demo}",
+ *     "delete-form" = "/admin/structure/demos/{demo}/delete"
  *   }
  * )
  */
-class DemoEntity extends ConfigEntityBase implements DemoInterface {
+class Demo extends ConfigEntityBase implements DemoInterface {
 
   /**
    * The ID of the demo.

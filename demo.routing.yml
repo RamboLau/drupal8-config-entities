@@ -12,15 +12,15 @@ demo.add:
     _title: 'Add a new demo'
   requirements:
     _permission: 'administer site configuration'
-demo.edit:
-  path: '/admin/structure/demos/edit/{demo}'
+entity.demo.edit_form:
+  path: '/admin/structure/demos/{demo}'
   defaults:
     _entity_form: 'demo.edit'
     _title: 'Edit demo'
   requirements:
     _permission: 'administer site configuration'
-demo.delete:
-  path: '/admin/structure/demos/delete/{demo}'
+entity.demo.delete_form:
+  path: '/admin/structure/demos/{demo}/delete'
   defaults:
     _entity_form: 'demo.delete'
     _title: 'Delete demo'

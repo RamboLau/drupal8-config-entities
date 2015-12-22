@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\demo\Form\demoForm.
+ * Contains \Drupal\demo\Form\DemoForm.
  */
 
 namespace Drupal\demo\Form;
@@ -10,18 +10,38 @@ namespace Drupal\demo\Form;
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class demoForm
+ * Class DemoForm
  *
  * Form class for adding/editing demo config entities.
  */
-class demoForm extends EntityForm {
+class DemoForm extends EntityForm {
+
+  /**
+   * @param \Drupal\Core\Entity\Query\QueryFactory $entity_query
+   *   The entity query.
+   */
+  public function __construct(QueryFactory $entity_query) {
+    $this->entityQuery = $entity_query;
+  }
+
   /**
    * {@inheritdoc}
    */
-  public function form(array $form, array &$form_state) {
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity.query')
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function form(array &$form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
     $demo = $this->entity;
 
@@ -71,7 +91,7 @@ class demoForm extends EntityForm {
   /**
    * {@inheritdoc}
    */
-  public function save(array $form, array &$form_state) {
+  public function save(array $form, FormStateInterface $form_state) {
     $demo = $this->entity;
     $status = $demo->save();
 
@@ -87,7 +107,6 @@ class demoForm extends EntityForm {
       )));
     }
 
-    $url = new Url('demo.list');
-    $form_state['redirect'] = $url->toString();
+    $form_state->setRedirect('demo.list');
   }
 } 

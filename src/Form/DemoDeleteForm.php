@@ -2,18 +2,20 @@
 
 /**
  * @file
- * Contains \Drupal\demo\Form\demoDeleteForm.
+ * Contains \Drupal\demo\Form\DemoDeleteForm.
  */
 
 namespace Drupal\demo\Form;
 
 use Drupal\Core\Entity\EntityConfirmFormBase;
 use Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+
 
 /**
  * Form that handles the removal of demo entities.
  */
-class demoDeleteForm extends EntityConfirmFormBase {
+class DemoDeleteForm extends EntityConfirmFormBase {
 
   /**
    * {@inheritdoc}
@@ -25,7 +27,7 @@ class demoDeleteForm extends EntityConfirmFormBase {
   /**
    * {@inheritdoc}
    */
-  public function getCancelRoute() {
+  public function getCancelUrl() {
     return new Url('demo.list');
   }
 
@@ -39,10 +41,11 @@ class demoDeleteForm extends EntityConfirmFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submit(array $form, array &$form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state) {
     // Delete and set message
     $this->entity->delete();
     drupal_set_message($this->t('The demo @name has been deleted.', array('@name' => $this->entity->name)));
-    $form_state['redirect_route'] = $this->getCancelRoute();
+
+    $form_state->setRedirectUrl($this->getCancelUrl());
   }
 }
