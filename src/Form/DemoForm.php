@@ -41,7 +41,7 @@ class DemoForm extends EntityForm {
   /**
    * {@inheritdoc}
    */
-  public function form(array &$form, FormStateInterface $form_state) {
+  public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
     $demo = $this->entity;
 
