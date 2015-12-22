@@ -1,4 +1,4 @@
-# Drupal8 demo模块
+# Drupal8 Configuration Entity 模块
 
 主要实现了以下功能:
 
