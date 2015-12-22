@@ -7,3 +7,8 @@
 3. Local Action
 4. Schema
 5. Configuration Entity
+
+
+....
+
+其他功能后续会陆续加进来.
