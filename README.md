@@ -1,2 +1,1 @@
-# drupal8-config-entities
-drupal8-config-entities
+# Drupal8 demo模块

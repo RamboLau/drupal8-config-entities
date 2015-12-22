@@ -1,0 +1,19 @@
+# Schema for the configuration files of the Demo module.
+
+demo.demo.*:
+  type: mapping
+  label: 'Demo'
+  mapping:
+    id:
+      type: string
+      label: 'Demo identifier'
+    uuid:
+      type: string
+      label: 'UUID'
+    name:
+      type: label
+      label: 'Name'
+    sex:
+      type: string
+      label: 'Sex'
+      translatable: true

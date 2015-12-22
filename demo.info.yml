@@ -1,0 +1,5 @@
+name: demo
+type: module
+description: 'Demonstrating the configuration entity system with demo.'
+version: 1.0
+core: 8.x

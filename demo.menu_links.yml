@@ -1,0 +1,5 @@
+demo.list:
+  title: Demo
+  description: 'Administer the demo entities'
+  parent: system.admin_structure
+  route_name: demo.list

@@ -1,0 +1,28 @@
+demo.list:
+  path: '/admin/structure/demos'
+  defaults:
+    _entity_list: 'demo'
+    _title: 'Demos'
+  requirements:
+    _permission: 'administer site configuration'
+demo.add:
+  path: '/admin/structure/demos/add'
+  defaults:
+    _entity_form: 'demo.add'
+    _title: 'Add a new demo'
+  requirements:
+    _permission: 'administer site configuration'
+demo.edit:
+  path: '/admin/structure/demos/edit/{demo}'
+  defaults:
+    _entity_form: 'demo.edit'
+    _title: 'Edit demo'
+  requirements:
+    _permission: 'administer site configuration'
+demo.delete:
+  path: '/admin/structure/demos/delete/{demo}'
+  defaults:
+    _entity_form: 'demo.delete'
+    _title: 'Delete demo'
+  requirements:
+    _permission: 'administer site configuration'

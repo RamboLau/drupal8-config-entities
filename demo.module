@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * This is the Demo module for demonstrating the configuration entities.
+ */
+
+use \Drupal\demo\Entity\DemoEntity;
+
+/**
+ * Menu argument loader. Returns a demo entity
+ *
+ * @param $id
+ * @return \Drupal\Core\Entity\EntityInterface|static
+ */
+function demo_load($id) {
+  return DemoEntity::load($id);
+}

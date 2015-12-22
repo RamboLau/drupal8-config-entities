@@ -1,0 +1,5 @@
+demo.add:
+  route_name: 'demo.add'
+  title: 'Add demo'
+  appears_on:
+    - demo.list
