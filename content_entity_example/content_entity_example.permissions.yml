@@ -1,0 +1,19 @@
+add online message entities:
+  title: 'Create new Online message entities'
+
+administer online message entities:
+  title: 'Administer Online message entities'
+  description: 'Allow to access the administration form to configure Online message entities.'
+  restrict access: true
+
+delete online message entities:
+  title: 'Delete Online message entities'
+
+edit online message entities:
+  title: 'Edit Online message entities'
+
+view published online message entities:
+  title: 'View published Online message entities'
+
+view unpublished online message entities:
+  title: 'View unpublished Online message entities'

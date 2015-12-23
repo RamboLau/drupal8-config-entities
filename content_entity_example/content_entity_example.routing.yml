@@ -1,63 +1,61 @@
-# Contact routing definition
-entity.contact.canonical:
-  path: '/admin/structure/{contact}'
-  defaults:
-  # Calls the view controller, defined in the annotation of the contact entity
-    _entity_view: 'contact'
-    _title: 'Contact Content'
-  requirements:
-  # Calls the access controller of the entity, $operation 'view'
-    _entity_access: 'contact.view'
 
-entity.contact.collection:
-  path: '/admin/structure/contact'
+# OnlineMessage routing definition
+entity.online_message.canonical:
+  path: '/admin/structure/online_message/{online_message}'
   defaults:
-  # Calls the list controller, defined in the annotation of the contact entity.
-    _entity_list: 'contact'
-    _title: 'Contact'
+    _entity_view: 'online_message'
+    _title: 'Online message'
   requirements:
-  # Checks for permission directly.
-    _permission: 'administer site configuration'
+    _entity_access: 'online_message.view'
   options:
     _admin_route: TRUE
 
-entity.contact.add_form:
-  path: '/admin/structure/contact/add'
+entity.online_message.collection:
+  path: '/admin/structure/online_message'
   defaults:
-  # Calls the form.add controller, defined in the contact entity.
-    _entity_form: 'contact.add'
-    _title: 'Add Contact'
+    _entity_list: 'online_message'
+    _title: 'Online message list'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'view online message entities'
   options:
     _admin_route: TRUE
 
-entity.contact.edit_form:
-  path: '/admin/structure/contact/{contact}'
+entity.online_message.add_form:
+  path: '/admin/structure/online_message/add'
   defaults:
-  # Calls the form.edit controller, defined in the contact entity.
-    _entity_form: 'contact.edit'
-    _title: 'Edit Contact'
+    _entity_form: online_message.add
+    _title: 'Add Online message'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'add online message entities'
   options:
     _admin_route: TRUE
 
-entity.contact.delete_form:
-  path: '/admin/structure/contact/{contact}/delete'
+entity.online_message.edit_form:
+  path: '/admin/structure/online_message/{online_message}/edit'
   defaults:
-  # Calls the form.delete controller, defined in the contact entity.
-    _entity_form: 'contact.delete'
-    _title: 'Delete Contact'
+    _entity_form: online_message.edit
+    _title: 'Edit Online message'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'edit online message entities'
   options:
     _admin_route: TRUE
 
-content_entity_example.contact_settings:
-  path: 'admin/structure/contact_settings'
+entity.online_message.delete_form:
+  path: '/admin/structure/online_message/{online_message}/delete'
   defaults:
-    _form: '\Drupal\content_entity_example\Form\ContactSettingsForm'
-    _title: 'Contact Settings'
+    _entity_form: online_message.delete
+    _title: 'Delete Online message'
   requirements:
-    _permission: 'administer contact entity'
+    _permission: 'delete online message entities'
+  options:
+    _admin_route: TRUE
+
+online_message.settings:
+  path: '/admin/structure/online_message/settings'
+  defaults:
+   _form: '\Drupal\content_entity_example\Form\OnlineMessageSettingsForm'
+   _title: 'Online message settings'
+  requirements:
+    _permission: 'administer online message entities'
+  options:
+    _admin_route: TRUE

@@ -1,14 +1,13 @@
-# Contact menu items definition
-entity.contact.collection:
-  title: 'Contact'
-  route_name: entity.contact.collection
-  description: 'List Contact (bundles)'
+# Online message menu items definition
+entity.online_message.collection:
+  title: 'Online message list'
+  route_name: entity.online_message.collection
+  description: 'List Online message entities'
   parent: system.admin_structure
-  weight: 99
+  weight: 100
 
-contact.admin.structure.settings:
-  title: Contact Settings
-  description: 'Configure Contact entity'
-  route_name:  content_entity_example.contact_settings
+online_message.admin.structure.settings:
+  title: Online message settings
+  description: 'Configure Online message entities'
+  route_name: online_message.settings
   parent: system.admin_structure
-

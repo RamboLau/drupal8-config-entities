@@ -1,7 +1,7 @@
-entity.contact.add_form:
-  route_name: 'entity.contact.add_form'
-  title: 'Add Contact'
+entity.online_message.add_form:
+  route_name: entity.online_message.add_form
+  title: 'Add Online message'
   appears_on:
-    - entity.contact.collection
-    - entity.contact.canonical
+    - entity.online_message.collection
+    - entity.online_message.canonical
 

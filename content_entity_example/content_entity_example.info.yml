@@ -1,5 +1,5 @@
 name: content_entity_example
 type: module
-description: Provides ContentEntityExampleContact entity.
+description: Provides ContentEntityExampleOnlineMessage entity.
 core: 8.x
 package: Other

@@ -1,0 +1,5 @@
+services:
+  service_example.default:
+    class: Drupal\service_example\DefaultService
+    arguments: []
+

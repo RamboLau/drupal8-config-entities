@@ -2,31 +2,33 @@
 
 /**
  * @file
- * Contains \Drupal\content_entity_example\Form\ContactDeleteForm.
+ * Contains \Drupal\content_entity_example\Form\OnlineMessageDeleteForm.
  */
 
 namespace Drupal\content_entity_example\Form;
 
-use Drupal\Core\Entity\EntityConfirmFormBase;
+use Drupal\Core\Entity\ContentEntityConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- * Builds the form to delete Contact entities.
+ * Provides a form for deleting Online message entities.
+ *
+ * @ingroup content_entity_example
  */
-class ContactDeleteForm extends EntityConfirmFormBase {
+class OnlineMessageDeleteForm extends ContentEntityConfirmFormBase {
   /**
    * {@inheritdoc}
    */
   public function getQuestion() {
-    return $this->t('Are you sure you want to delete %name?', array('%name' => $this->entity->label()));
+    return $this->t('Are you sure you want to delete entity %name?', array('%name' => $this->entity->label()));
   }
 
   /**
    * {@inheritdoc}
    */
   public function getCancelUrl() {
-    return new Url('entity.contact.collection');
+    return new Url('entity.online_message.collection');
   }
 
   /**

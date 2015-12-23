@@ -1,0 +1,21 @@
+# Online message routing definition
+online_message.settings_tab:
+  route_name: online_message.settings
+  title: 'Settings'
+  base_route: online_message.settings
+entity.online_message.canonical:
+  route_name: entity.online_message.canonical
+  base_route: entity.online_message.canonical
+  title: 'View'
+
+entity.online_message.edit_form:
+  route_name: entity.online_message.edit_form
+  base_route: entity.online_message.canonical
+  title: Edit
+
+entity.online_message.delete_form:
+  route_name:  entity.online_message.delete_form
+  base_route:  entity.online_message.canonical
+  title: Delete
+  weight: 10
+
