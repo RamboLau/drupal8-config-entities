@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains routing_example.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function routing_example_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the routing_example module.
+    case 'help.page.routing_example':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides routes example.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function routing_example_theme() {
+  $theme = [];
+
+  return $theme;
+}
