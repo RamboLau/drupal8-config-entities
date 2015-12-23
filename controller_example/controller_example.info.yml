@@ -1,0 +1,5 @@
+name: controller_example
+type: module
+description: Provides controller example.
+core: 8.x
+package: Other

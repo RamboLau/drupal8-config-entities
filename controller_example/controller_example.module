@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains controller_example.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function controller_example_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the controller_example module.
+    case 'help.page.controller_example':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides controller example.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function controller_example_theme() {
+  $theme = [];
+
+  return $theme;
+}

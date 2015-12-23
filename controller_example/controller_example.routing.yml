@@ -1,0 +1,17 @@
+
+controller_example.default_controller_index:
+  path: '/controller_example/index/hello/{name}'
+  defaults:
+    _controller: '\Drupal\controller_example\Controller\DefaultController::index'
+    _title: 'index page'
+  requirements:
+    _permission: 'access content'
+
+controller_example.default_controller_default_page:
+  path: '/controller_example/default_page/hello/{name}'
+  defaults:
+    _controller: '\Drupal\controller_example\Controller\DefaultController::default_page'
+    _title: 'default page'
+  requirements:
+    _permission: 'access content'
+
