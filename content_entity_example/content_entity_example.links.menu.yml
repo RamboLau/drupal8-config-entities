@@ -1,0 +1,14 @@
+# Contact menu items definition
+entity.contact.collection:
+  title: 'Contact'
+  route_name: entity.contact.collection
+  description: 'List Contact (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
+contact.admin.structure.settings:
+  title: Contact Settings
+  description: 'Configure Contact entity'
+  route_name:  content_entity_example.contact_settings
+  parent: system.admin_structure
+
