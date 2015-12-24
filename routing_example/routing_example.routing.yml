@@ -1,0 +1,18 @@
+routing_example.example_controller_index:
+  path: '/routing_example/index/hello/{name}'
+  defaults:
+    _controller: '\Drupal\routing_example\Controller\BaseController::index'
+    _title: 'hello world'
+  requirements:
+    _permission: 'access content'
+
+routing_example.example_controller_dependency_injection:
+  path: '/routing_example/dependency_injection'
+  defaults:
+    _controller: '\Drupal\routing_example\Controller\ExampleDependencyInjectionController::index'
+    _title: 'hello world'
+  requirements:
+    _permission: 'access content'
+
+route_callbacks:
+  - '\Drupal\routing_example\Routing\ExampleRoutes::routes'
