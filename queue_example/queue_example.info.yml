@@ -1,0 +1,5 @@
+name: queue_example
+type: module
+description: Provides queue example.
+core: 8.x
+package: Other

@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Contains queue_example.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function queue_example_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the queue_example module.
+    case 'help.page.queue_example':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides queue example.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function queue_example_theme() {
+  $theme = [];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * @see \Drupal\queue_example\Plugin\QueueWorker\ExampleQueue
+ */
+function queue_example_cron() {
+  $queue = \Drupal::queue('example_queue', TRUE);
+  $item = [ 'entity_type' => 'node', 'id' => 1 ];
+  $queue->createItem($item);
+}
